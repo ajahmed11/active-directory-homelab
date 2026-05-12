@@ -61,21 +61,27 @@ The project includes Domain Controller installation, DNS configuration, Organiza
 # 🌐 Network Architecture
 
 ```text
-                 +----------------------+
-                 |  Windows 10 Client   |
-                 |      CLIENT01        |
-                 +----------+-----------+
-                            |
-                            |
-                    192.168.10.0/24
-                            |
-                            |
-                 +----------+-----------+
-                 | Domain Controller    |
-                 | Windows Server 2019  |
-                 | DC01                 |
-                 | AD DS + DNS + DHCP   |
-                 +----------------------+
+
+      +----------------------+
+      |  Windows 10 Client   |
+      |      CLIENT01        |
+      +----------+-----------+
+                 |
+                 |--------------------- 
+                 |                      \
+                 |                       \
+                 |                        \
+         192.168.10.0/24                  \
+                 |                         \
+                 |                          \
+      +----------+-----------+      +----------+-----------+
+      |  Windows 10 Client   |      | Domain Controller    |
+      |      CLIENT02        |      | Windows Server 2019  |
+      +----------------------+      | DC01                 |
+                                    | AD DS + DNS + DHCP   |
+                                    +----------------------+
+
+           
 ```
 
 ---
